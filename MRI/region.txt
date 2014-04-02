@@ -1,0 +1,44 @@
+%Grant Nicholas
+%regions marked on the printed images 
+%mean and std calculations at the end of the code
+
+%region 1 is the dark line in what looks like the septum
+region1 = [];
+for j= 60:65
+    for i = 100:107
+       region1(end+1) = abs(newimage2(j,i));
+    end
+end
+mr1 = mean(region1)
+stdr1 = std(region1)
+
+%region 2 is in what looks like the right ventricle
+region2 = [];
+for j= 57:65
+    for i = 65:83
+       region2(end+1) = abs(newimage2(j,i));
+    end
+end
+mr2 = mean(region2)
+stdr2 = std(region2)
+
+%region 3 is in what looks like arteries on the bottom left side of the
+%image
+
+region3 = [];
+for j= 100:110
+    for i = 40:50
+       region3(end+1) = abs(newimage2(j,i));
+    end
+end
+mr3 = mean(region3)
+stdr3 = std(region3)
+
+% mr1   =  52.7689     Region 1 has a low T2 and is fairly consistent
+% stdr1 =  6.4926      
+% mr2   =  177.8633    Region 2 has a very high T2 and is fairly consistent
+%stdr2  =  16.8912
+% mr3   =  65.2095     Region 3 has a low T2 but the T2 varies a lot over
+% stdr3 =  23.8178     the region (high std)
+
+
